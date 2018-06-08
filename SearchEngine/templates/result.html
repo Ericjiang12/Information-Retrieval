@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <title>search engine</title>
+</head>
+
+<body>
+    <form action = "{% url 'result' %}", method = 'GET' >
+        <input type="text" placeholder="Search.." name="query" value="{{ query }}" required/>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if all_query %}
+        <h3>Top 10 result for "{{ query }}": </h3>
+        <table>
+            {% for url,snippet in all_query.items %}
+                <tr>
+                    <td>
+                        <a href="http://{{ url }}">{{ url }}</a>
+                        <p>{{ snippet }}</p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h3>No result found for "{{ query }}"</h3>
+{% endif %}
+
+
+</body>
+</html>

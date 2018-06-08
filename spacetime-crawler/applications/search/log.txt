@@ -1,0 +1,2 @@
+total urls crawled: 3788
+http://www.ics.uci.edu/grad/policies/index.php has most out links: 124

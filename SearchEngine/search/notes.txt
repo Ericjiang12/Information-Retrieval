@@ -1,0 +1,6 @@
+Some notes for the project
+
+1. When building index, we ignore the urls that contains "Badcontent" and "ironwood". This is because we notice
+that we couldn't open url with this pattern, and we do not want our users to get those useless links in search results.
+
+2. We put extra weight to the docs when terms appear in the title or header of the doc.
